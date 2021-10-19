@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scenes.accountant.AccountantOverviewController">
+   <children>
+      <Label contentDisplay="TOP" layoutX="96.0" layoutY="24.0" prefHeight="32.0" prefWidth="275.0" text="Welcome to the British Council" textAlignment="CENTER">
+         <font>
+            <Font name="Monospaced Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelBranchTitle" layoutX="96.0" layoutY="48.0" />
+      <Button layoutX="43.0" layoutY="32.0" mnemonicParsing="false" onAction="#homeButtonOnClick" prefHeight="32.0" prefWidth="33.0" text="H" />
+      <Separator layoutX="39.0" layoutY="81.0" prefHeight="0.0" prefWidth="1213.0" />
+      <Label fx:id="loggedInAccountant" alignment="CENTER_RIGHT" layoutX="840.0" layoutY="32.0" prefHeight="16.0" prefWidth="392.0" wrapText="true" />
+      <Label alignment="CENTER_RIGHT" layoutX="1141.0" layoutY="48.0" prefHeight="16.0" prefWidth="91.0" text="Accountant" />
+      <VBox alignment="CENTER" fillWidth="false" layoutX="32.0" layoutY="295.0" prefHeight="166.0" prefWidth="163.0" spacing="15.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#intlExamFeeButtonOnClick" prefHeight="24.0" prefWidth="188.0" text="Exam Reg Fee" />
+            <Button mnemonicParsing="false" onAction="#examRegRefundButtonOnClick" prefHeight="24.0" prefWidth="327.0" text="Exam Reg Refund" />
+            <Button mnemonicParsing="false" onAction="#localEventFeeButtonOnClick" prefHeight="24.0" prefWidth="195.0" text="Local Event Fee" />
+            <Button mnemonicParsing="false" onAction="#libraryFinesButtonOnClick" prefHeight="24.0" prefWidth="206.0" text="Library Fine" />
+            <Button mnemonicParsing="false" onAction="#accountsSummaryButtonOnClick" prefHeight="24.0" prefWidth="188.0" text="Accounts Summary" />
+         </children>
+         <effect>
+            <SepiaTone />
+         </effect>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </VBox>
+      <Label layoutX="48.0" layoutY="279.0" text="Accountant Actions:" />
+      <AnchorPane fx:id="displayPane" layoutX="234.0" layoutY="98.0" prefHeight="600.0" prefWidth="1013.0" />
+   </children>
+</AnchorPane>

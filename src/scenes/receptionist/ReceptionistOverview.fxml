@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scenes.receptionist.ReceptionistOverviewController">
+   <children>
+      <Label contentDisplay="TOP" layoutX="86.0" layoutY="14.0" prefHeight="32.0" prefWidth="275.0" text="Welcome to the British Council" textAlignment="CENTER">
+         <font>
+            <Font name="Monospaced Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelBranchTitle" layoutX="86.0" layoutY="38.0" text="*branch name goes here*" />
+      <Button fx:id="buttonHome" layoutX="33.0" layoutY="22.0" mnemonicParsing="false" onAction="#homeButtonOnClick" prefHeight="32.0" prefWidth="33.0" text="H" />
+      <VBox alignment="CENTER" layoutX="33.0" layoutY="238.0" prefHeight="180.0" prefWidth="122.0" spacing="15.0">
+         <effect>
+            <SepiaTone />
+         </effect>
+         <children>
+            <Separator prefWidth="200.0" />
+            <Label alignment="CENTER" prefHeight="16.0" prefWidth="431.0" text="Memberships" textFill="#1811d0" />
+            <Button mnemonicParsing="false" onAction="#newMemberButtonOnClick" prefHeight="24.0" prefWidth="365.0" text="New Member" />
+            <Button mnemonicParsing="false" onAction="#memberListButtonOnClick" prefHeight="24.0" prefWidth="365.0" text="Members List" />
+            <Separator prefWidth="200.0" />
+            <Label alignment="CENTER" prefHeight="16.0" prefWidth="430.0" text="Exams" />
+            <Button mnemonicParsing="false" onAction="#exmCertsButtonOnClick" prefHeight="24.0" prefWidth="269.0" text="Certificates" />
+            <Button mnemonicParsing="false" onAction="#candidateListButtonOnClick" prefHeight="24.0" prefWidth="269.0" text="Candidates List" />
+            <Separator prefWidth="200.0" />
+         </children>
+      </VBox>
+      <Separator layoutX="29.0" layoutY="71.0" prefHeight="0.0" prefWidth="1213.0" />
+      <Label fx:id="loggedInReceptionist" alignment="CENTER_RIGHT" layoutX="938.0" layoutY="22.0" prefHeight="16.0" prefWidth="284.0" wrapText="true" />
+      <Label alignment="CENTER_RIGHT" layoutX="1131.0" layoutY="38.0" prefHeight="16.0" prefWidth="91.0" text="Receptionist" />
+      <Label alignment="CENTER" layoutX="13.0" layoutY="222.0" prefHeight="16.0" prefWidth="163.0" text="Receptionist Actions:" textAlignment="CENTER" textFill="#2d0d97" />
+      <AnchorPane fx:id="displayPane" layoutX="196.0" layoutY="88.0" prefHeight="605.0" prefWidth="1027.0" />
+   </children>
+</AnchorPane>

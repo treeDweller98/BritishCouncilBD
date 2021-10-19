@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scenes.manager.ManagerOverviewController">
+   <children>
+      <Label contentDisplay="TOP" layoutX="96.0" layoutY="24.0" prefHeight="32.0" prefWidth="275.0" text="Welcome to the British Council" textAlignment="CENTER">
+         <font>
+            <Font name="Monospaced Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelBranchTitle" layoutX="96.0" layoutY="48.0" text="*branch name goes here*" />
+      <Button layoutX="43.0" layoutY="32.0" mnemonicParsing="false" onAction="#homeButtonOnClick" prefHeight="32.0" prefWidth="33.0" text="H" />
+      <Separator layoutX="39.0" layoutY="81.0" prefHeight="0.0" prefWidth="1213.0" />
+      <Label fx:id="loggedInManager" alignment="CENTER_RIGHT" layoutX="988.0" layoutY="32.0" prefHeight="16.0" prefWidth="244.0" text="ManagerName" wrapText="true" />
+      <Label alignment="CENTER_RIGHT" layoutX="1141.0" layoutY="48.0" prefHeight="16.0" prefWidth="91.0" text="Manager" />
+      <VBox alignment="CENTER" layoutX="32.0" layoutY="295.0" prefHeight="166.0" prefWidth="190.0" spacing="15.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#addEmployeeButtonOnClick" prefHeight="24.0" prefWidth="188.0" text="Add Employee" />
+            <Button mnemonicParsing="false" onAction="#createLocalEventButtonOnClick" prefHeight="24.0" prefWidth="195.0" text="Create Local Event" />
+            <Button mnemonicParsing="false" onAction="#intlExamEnableButtonOnClick" prefHeight="24.0" prefWidth="206.0" text="Enable Int'l Exam Reg" />
+            <Button mnemonicParsing="false" onAction="#postRemoveNoticeButtonOnClick" prefHeight="24.0" prefWidth="195.0" text="Post / Remove Notices" />
+         </children>
+         <effect>
+            <SepiaTone />
+         </effect>
+      </VBox>
+      <Label layoutX="70.0" layoutY="279.0" text="Manager Actions:" />
+      <TableView fx:id="employeeList" layoutX="265.0" layoutY="157.0" prefHeight="495.0" prefWidth="955.0">
+        <columns>
+          <TableColumn fx:id="empNameCol" editable="false" prefWidth="340.0" text="Name" />
+            <TableColumn fx:id="empIDCol" editable="false" minWidth="0.0" prefWidth="106.0" text="ID" />
+            <TableColumn fx:id="empPostCol" editable="false" prefWidth="267.0" text="Post" />
+            <TableColumn fx:id="empPhoneCol" editable="false" prefWidth="241.0" sortable="false" text="Phone" />
+        </columns>
+      </TableView>
+      <Label layoutX="640.0" layoutY="137.0" text="Branch Employees List" textFill="#910dc9">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="324.0" layoutY="660.0" text="Select to view or modify employee details" />
+      <Button layoutX="265.0" layoutY="656.0" mnemonicParsing="false" onAction="#viewEmployeeDetailsBtnOnClick" prefHeight="24.0" prefWidth="50.0" text="View" />
+      <Button layoutX="1153.0" layoutY="656.0" mnemonicParsing="false" onAction="#refreshBtnOnClick" text="Refresh" />
+   </children>
+</AnchorPane>

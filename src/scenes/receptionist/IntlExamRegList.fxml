@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="displayPane" prefHeight="557.0" prefWidth="968.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scenes.receptionist.IntlExamRegListController">
+   <children>
+      <TableView fx:id="AllExamRegTable" layoutX="49.0" layoutY="45.0" onMouseClicked="#candidateSelectedOnClick" prefHeight="479.0" prefWidth="871.0">
+         <columns>
+            <TableColumn fx:id="candidateNumCol" editable="false" prefWidth="110.0" sortable="false" text="Candidate No." />
+            <TableColumn fx:id="nameCol" editable="false" prefWidth="280.0" sortable="false" text="Candidate Name" />
+            <TableColumn fx:id="phoneCol" prefWidth="128.0" text="Phone" />
+            <TableColumn fx:id="feeCol" editable="false" prefWidth="180.0" sortable="false" text="Fee Paid" />
+            <TableColumn fx:id="paidOnCol" prefWidth="172.0" text="Paid On" />
+         </columns>
+      </TableView>
+      <Label layoutX="49.0" layoutY="14.0" text="All Valid Exam Registrations" textFill="#470cb5">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="49.0" layoutY="527.0" text="Double Click to view registration details" />
+      <ComboBox fx:id="seriesComboBox" layoutX="672.0" layoutY="15.0" onAction="#seriesComboBoxOnAction" prefHeight="24.0" prefWidth="248.0" promptText="Exam Series-Session-Year" />
+   </children>
+</AnchorPane>

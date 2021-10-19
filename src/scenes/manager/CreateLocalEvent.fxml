@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scenes.manager.CreateLocalEventController">
+   <children>
+      <Label layoutX="56.0" layoutY="67.0" text="Fill in the fields below with relevant information" textFill="#310cc6">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="347.0" layoutY="14.0" text="Create Local Event">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="errorStatusMessageLabel" layoutX="56.0" layoutY="336.0" prefHeight="25.0" prefWidth="455.0" textAlignment="CENTER" textFill="#cd4717" wrapText="true">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Separator layoutX="24.0" layoutY="39.0" prefHeight="16.0" prefWidth="857.0" />
+      <GridPane layoutX="56.0" layoutY="95.0" prefHeight="200.0" prefWidth="455.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="206.0" minWidth="10.0" prefWidth="122.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="308.0" minWidth="10.0" prefWidth="308.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Event Title" />
+            <Label text="Type" GridPane.rowIndex="1" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <RadioButton fx:id="eventTypeCourse" mnemonicParsing="false" onAction="#courseChosen" text="Course">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="eventType" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="eventTypeOneOff" mnemonicParsing="false" onAction="#oneOffChosen" selected="true" text="One-Off" toggleGroup="$eventType" />
+               </children>
+            </HBox>
+            <Label text="Instructor" GridPane.rowIndex="2" />
+            <Label text="Fee" GridPane.rowIndex="3" />
+            <Label text="Registration Ends" GridPane.rowIndex="4" />
+            <Label text="Schedule" GridPane.rowIndex="6" />
+            <TextField fx:id="eventTitle" GridPane.columnIndex="1" />
+            <TextField fx:id="eventFee" promptText="In BDT; 0 if free" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="eventSchedule" promptText="appears exactly as typed" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <HBox fillHeight="false" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <TextField fx:id="instructorName" editable="false" promptText="Name" />
+                  <TextField fx:id="instructorID" editable="false" promptText="ID number" />
+               </children>
+            </HBox>
+            <DatePicker fx:id="regEndDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="Capacity" GridPane.rowIndex="5" />
+            <TextField fx:id="maxCapacity" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+         </children>
+      </GridPane>
+      <TextArea fx:id="eventDetailsText" layoutX="547.0" layoutY="94.0" prefHeight="200.0" prefWidth="308.0" promptText="Enter event details for display (appears exactly as typed)" wrapText="true" />
+      <Button layoutX="657.0" layoutY="389.0" mnemonicParsing="false" onAction="#createEventButtonOnClick" prefHeight="97.0" prefWidth="198.0" text="Create Event" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,9 @@
+package branchLibrary;
+
+/**
+ *
+ * @author f_ahmed
+ */
+public enum BookGenre {
+    ACTION, ADVENTURE, EDUCATIONAL, HISTORY, HORROR, LITERARY, MYSTERY, NONFICTION, SCIFI, SCIENCE, SELFHELP, THRILLER, PHILOSOPHY, POLITICS;
+}

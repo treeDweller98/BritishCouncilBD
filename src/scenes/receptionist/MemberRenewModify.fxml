@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scenes.receptionist.MemberRenewModifyController">
+   <children>
+      <Label layoutX="26.0" layoutY="14.0" text="Renew or Modify existing Membership">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <GridPane layoutX="87.0" layoutY="98.0" prefHeight="273.0" prefWidth="658.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="236.0" minWidth="0.0" prefWidth="229.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="519.0" minWidth="10.0" prefWidth="429.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="Phone" GridPane.rowIndex="2" />
+            <Label text="Email" GridPane.rowIndex="3" />
+            <Label text="Date of Birth" GridPane.rowIndex="1" />
+            <Label text="Member Name" />
+            <Label text="Address" GridPane.rowIndex="4" />
+            <TextField fx:id="memberName" prefHeight="24.0" prefWidth="217.0" promptText="Capitalise First Letters" GridPane.columnIndex="1" />
+            <TextField fx:id="memberPhoneNumber" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="memberEmail" promptText="e.g. abcd@randommail.com" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="memberAddress" promptText="house, road, city, district, postal code" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="Identification document type" GridPane.rowIndex="5" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="70.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <children>
+                  <RadioButton fx:id="memberIDtypeNID" mnemonicParsing="false" onAction="#nidSelected" text="NID">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="idDocType" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="memberIDtypePassport" mnemonicParsing="false" onAction="#passportSelected" text="Passport" toggleGroup="$idDocType" />
+               </children>
+            </HBox>
+            <Label text="Identification document number" GridPane.rowIndex="6" />
+            <TextField fx:id="memberIDDocNum" promptText="FORMAT: 10 digit NID, or  &quot;AB 1234567&quot; for passport" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label text="Membership valid till" GridPane.rowIndex="7" />
+            <Label fx:id="membershipValidityLabel" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <CheckBox fx:id="isRenewingCheckBox" mnemonicParsing="false" text="Tick if Renewing" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="50.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <DatePicker fx:id="memberDoBpicker" />
+                  <Label fx:id="currentDob" />
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+      <Label layoutX="87.0" layoutY="71.0" text="Edit member details below as desired" textFill="#470cb5" />
+      <Separator layoutX="18.0" layoutY="39.0" prefHeight="16.0" prefWidth="806.0" />
+      <Label fx:id="errorStatusMessageLabel" alignment="CENTER" layoutX="208.0" layoutY="432.0" prefHeight="16.0" prefWidth="433.0" textFill="#d00d0d" wrapText="true">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Button layoutX="674.0" layoutY="418.0" mnemonicParsing="false" onAction="#confirmChangesButtonOnClick" prefHeight="45.0" prefWidth="142.0" text="Confirm Changes" />
+      <Button layoutX="37.0" layoutY="418.0" mnemonicParsing="false" onAction="#generateIDcardButtonOnClick" prefHeight="45.0" prefWidth="142.0" text="Print ID card" />
+      <Label layoutX="623.0" layoutY="14.0" text="ID: ">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="currentMemberID" layoutX="663.0" layoutY="14.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1013.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scenes.librarian.BorrowersListController">
+   <children>
+      <Label layoutX="372.0" layoutY="14.0" text="List of all Book Borrowers" textFill="#1801c9">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TableView fx:id="borrowersTable" layoutX="15.0" layoutY="47.0" prefHeight="521.0" prefWidth="986.0">
+         <columns>
+            <TableColumn fx:id="memberNameCol" editable="false" prefWidth="186.0" text="Member Name" />
+            <TableColumn fx:id="idCol" editable="false" minWidth="0.0" prefWidth="97.0" text="ID" />
+            <TableColumn fx:id="books" editable="false" prefWidth="595.0" sortable="false" text="Titles of Books Borrowed" />
+            <TableColumn fx:id="dueCol" editable="false" prefWidth="107.0" text="Dues" />
+         </columns>
+      </TableView>
+      <Label fx:id="errorStatusLabel" layoutX="69.0" layoutY="516.0" prefHeight="50.0" prefWidth="448.0" textFill="#bc0d0d">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="britishcouncilbd.DemoSceneController">
+   <children>
+      <TableView fx:id="bookTV" layoutX="93.0" layoutY="55.0" prefHeight="200.0" prefWidth="440.0">
+        <columns>
+          <TableColumn fx:id="titleCol" editable="false" prefWidth="75.0" text="title " />
+          <TableColumn fx:id="priceCol" editable="false" prefWidth="75.0" text="price " />
+            <TableColumn fx:id="idCol" editable="false" prefWidth="75.0" text="id" />
+        </columns>
+      </TableView>
+      <Label fx:id="resultLabel" layoutX="87.0" layoutY="272.0" prefHeight="110.0" prefWidth="324.0" text="result label text here" />
+      <Button fx:id="showBtn" layoutX="411.0" layoutY="303.0" mnemonicParsing="false" onAction="#showButtonOnClick" prefHeight="76.0" prefWidth="126.0" text="Show" />
+      <ComboBox fx:id="categoryCmb" layoutX="93.0" layoutY="22.0" prefHeight="24.0" prefWidth="280.0" promptText="Category" />
+   </children>
+</AnchorPane>

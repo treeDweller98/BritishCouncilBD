@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane fx:id="classSummaryPane" prefHeight="600.0" prefWidth="1041.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scenes.instructor.CourseDetailsController">
+   <children>
+      <ComboBox fx:id="classSelectorComboBox" layoutX="14.0" layoutY="14.0" onAction="#classSelectorComboBoxOnAction" prefHeight="24.0" prefWidth="303.0" promptText="Select a class to view" />
+      <TableView fx:id="studentsListTable" layoutX="16.0" layoutY="50.0" onMouseClicked="#studentSelected" prefHeight="504.0" prefWidth="409.0">
+        <columns>
+          <TableColumn fx:id="rollCol" editable="false" prefWidth="53.0" text="Roll" />
+            <TableColumn fx:id="studIdCol" editable="false" minWidth="0.0" prefWidth="100.0" text="ID" />
+            <TableColumn fx:id="studNameCol" editable="false" prefWidth="180.0" text="Student Name" />
+            <TableColumn fx:id="marksCol" editable="false" prefWidth="75.0" text="Marks" />
+        </columns>
+      </TableView>
+      <TableView fx:id="examListTable" layoutX="442.0" layoutY="50.0" onMouseClicked="#examSelected" prefHeight="181.0" prefWidth="508.0">
+        <columns>
+          <TableColumn fx:id="examDateCol" editable="false" prefWidth="71.0" text="Date" />
+          <TableColumn fx:id="examTitleCol" editable="false" minWidth="0.0" prefWidth="191.0" text="Exam Title" />
+            <TableColumn fx:id="examMarksCol" editable="false" prefWidth="77.0" text="Marks" />
+            <TableColumn fx:id="examPercentageCol" editable="false" prefWidth="90.0" text="\% of Total" />
+            <TableColumn fx:id="examStatCol" editable="false" prefWidth="75.0" text="Status" />
+        </columns>
+      </TableView>
+      <Button fx:id="addNewExamBtn" alignment="CENTER" disable="true" layoutX="958.0" layoutY="50.0" mnemonicParsing="false" onAction="#addNewExamButtonOnClick" prefHeight="85.0" prefWidth="62.0" text="ADD NEW EXAM" textAlignment="CENTER" wrapText="true" />
+      <Button fx:id="gradeExamBtn" alignment="CENTER" disable="true" layoutX="958.0" layoutY="146.0" mnemonicParsing="false" onAction="#gradeExamButtonOnClick" prefHeight="85.0" prefWidth="62.0" text="Grade Exam" textAlignment="CENTER" wrapText="true" />
+      <Button fx:id="generateReportCardBtn" alignment="CENTER" disable="true" layoutX="15.0" layoutY="554.0" mnemonicParsing="false" onAction="#generateReportCardButtonOnClick" prefHeight="31.0" prefWidth="409.0" text="Generate Report Card for Selected Student" textAlignment="CENTER" wrapText="true" />
+      <HBox alignment="CENTER_LEFT" layoutX="442.0" layoutY="554.0" prefHeight="31.0" prefWidth="508.0" spacing="10.0">
+         <children>
+            <Button fx:id="viewPieChartBtn" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="#viewPieChartButtonOnClick" prefHeight="31.0" prefWidth="277.0" text="View Pie Chart of Student Performance" textAlignment="CENTER" wrapText="true" />
+            <RadioButton fx:id="pieSelectedExamToggle" mnemonicParsing="false" text="Selected exam">
+               <toggleGroup>
+                  <ToggleGroup fx:id="piechartSelector" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="pieOverallToggle" mnemonicParsing="false" text="Overall" toggleGroup="$piechartSelector" />
+         </children>
+      </HBox>
+      <Label layoutX="442.0" layoutY="18.0" text="Course Schedule:" />
+      <Label fx:id="courseScheduleLabel" layoutX="563.0" layoutY="18.0" prefHeight="16.0" prefWidth="409.0" />
+      <Label fx:id="errorStatusLabel" layoutX="442.0" layoutY="231.0" prefHeight="16.0" prefWidth="508.0" textFill="#d00c0c" />
+      <PieChart fx:id="pieChartOfStudentPerformance" layoutX="442.0" layoutY="244.0" prefHeight="309.0" prefWidth="508.0" />
+   </children>
+</AnchorPane>

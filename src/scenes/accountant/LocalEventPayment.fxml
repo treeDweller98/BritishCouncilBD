@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1013.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scenes.accountant.LocalEventPaymentController">
+   <children>
+      <Label layoutX="402.0" layoutY="14.0" text="Event Fee Payments" textFill="#1801c9">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TableView fx:id="pendingEventFeeTable" layoutX="69.0" layoutY="76.0" onMouseClicked="#regSelected" prefHeight="339.0" prefWidth="875.0">
+         <columns>
+            <TableColumn fx:id="eventNameCol" prefWidth="311.0" text="Event Name" />
+            <TableColumn fx:id="idCol" prefWidth="120.0" text="Member ID" />
+            <TableColumn fx:id="memberNameCol" prefWidth="287.0" text="Member Name" />
+            <TableColumn fx:id="amountCol" prefWidth="156.0" text="Amount" />
+         </columns>
+      </TableView>
+      <TextField fx:id="searchBar" layoutX="668.0" layoutY="52.0" prefHeight="24.0" prefWidth="249.0" promptText="Enter member ID to search" />
+      <Button fx:id="searchBtn" defaultButton="true" layoutX="917.0" layoutY="52.0" mnemonicParsing="false" onAction="#searchButtonOnClick" prefHeight="24.0" prefWidth="27.0" text="S" />
+      <TextField fx:id="payerName" layoutX="69.0" layoutY="424.0" prefHeight="24.0" prefWidth="294.0" promptText="Payer name" />
+      <TextField fx:id="paidAmount" layoutX="370.0" layoutY="424.0" promptText="Paid amount (in BDT)" />
+      <Button fx:id="markAsPaidBtn" disable="true" layoutX="728.0" layoutY="458.0" mnemonicParsing="false" onAction="#markAsPaidButtonOnClick" prefHeight="65.0" prefWidth="216.0" text="Mark as Paid" />
+      <Label fx:id="errorStatusLabel" layoutX="69.0" layoutY="475.0" prefHeight="50.0" prefWidth="448.0" textFill="#bc0d0d">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

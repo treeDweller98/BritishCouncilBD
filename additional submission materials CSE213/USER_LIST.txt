@@ -1,0 +1,12 @@
+Preexisting users you can check with:
+ID       	   Type
+20002		Receptionist
+20003		Accountant
+20004		Instructor
+20005		Manager -- can see list/details of existing employees so log in as managers to make things easy
+20007		Manager
+20008		Instructor
+20010		Librarian
+
+
+All user passwords and auth code = 12345
